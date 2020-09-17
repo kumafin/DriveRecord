@@ -13,11 +13,11 @@ FILEPATH = '/home/pi/Videos/' # 保存先
 MOVIE_INTERVAL = 5 # 撮影時間
 MAXFILE = 5
 filelists = [MAXFILE] # リスト定義
-now = datetime.datetime.now()
 count = 0
 
 
 def main():
+    now = datetime.datetime.now()   # 毎回時間情報を取得
     filename = FILEPATH + now.strftime('%Y%m%d_%H%M%S') + '.h264'
     #filename = FILEPATH + 'test.h264'
     with picamera.PiCamera() as camera:   # PiCameraクラスのインスタンス生成
